@@ -8,7 +8,7 @@ var selectedAddress = null;
 var selectedId = null;
 
 function updateAddress(tabId) {
-  chrome.tabs.sendRequest(tabId, {}, function(address) {
+  chrome.tabs.sendMessage(tabId, {}, {}, function(address) {
     addresses[tabId] = address;
     if (!address) {
       chrome.pageAction.hide(tabId);
