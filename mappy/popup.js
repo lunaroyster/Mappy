@@ -19,7 +19,7 @@ function gclient_geocode(address) {
         var latlng = json.results[0].geometry.location;
         latlng = latlng.lat + ',' + latlng.lng;
 
-        var src = "https://maps.google.com/staticmap?center=" + latlng +
+        var src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latlng +
                   "&markers=" + latlng + "&zoom=14" +
                   "&size=512x512&sensor=false&key=" + maps_key;
         var map = document.getElementById("map");
