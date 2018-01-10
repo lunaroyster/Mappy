@@ -33,9 +33,9 @@ chrome.tabs.onUpdated.addListener(function(tabId, change, tab) {
   }
 });
 
-chrome.tabs.onSelectionChanged.addListener(function(tabId, info) {
-  selectedId = tabId;
-  updateSelected(tabId);
+chrome.tabs.onActivated.addListener(function(activeInfo) {
+  selectedId = activeInfo.tabId;
+  updateSelected(activeInfo.tabId);
 });
 
 // Ensure the current selected tab is set up.
